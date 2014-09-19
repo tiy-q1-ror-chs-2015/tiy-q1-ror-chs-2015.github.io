@@ -1,0 +1,1 @@
+$(document).ready(function(){{var n=$(".centered-navigation-menu"),e=$(".centered-navigation-menu-button");$(".sign-up")}$(e).on("click",function(e){e.preventDefault(),n.slideToggle(function(){n.is(":hidden")&&n.removeAttr("style")})})});
