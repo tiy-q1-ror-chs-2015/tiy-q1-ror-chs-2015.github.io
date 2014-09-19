@@ -1,17 +1,14 @@
-$(document).foundation();
+$(document).ready(function() {
+  var menu = $('.centered-navigation-menu');
+  var menuToggle = $('.centered-navigation-menu-button');
+  var signUp = $('.sign-up');
 
-$(document).ready(function () {
-  var $li = $("h2").
-  each(function () {
-    var id = this.id;
-    $(this).attr("data-magellan-destination", id);
-  }).
-  map(function () {
-    var id = this.id;
-    return "<li data-magellan-arrival='" + id + "'><a href='#" + id + "'>" +
-    this.innerText + "</a></li>";
-  }).get();
-
-  $("#doc-nav").empty();
-  $("#doc-nav").append($li);
+  $(menuToggle).on('click', function(e) {
+    e.preventDefault();
+    menu.slideToggle(function(){
+      if(menu.is(':hidden')) {
+        menu.removeAttr('style');
+      }
+    });
+  });
 });

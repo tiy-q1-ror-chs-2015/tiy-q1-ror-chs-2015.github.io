@@ -7,6 +7,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    bitters (0.10.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     chunky_png (1.3.1)
     coffee-script (2.2.0)
       coffee-script-source
@@ -80,6 +87,9 @@ GEM
       rouge (~> 1.0)
     minitest (5.3.4)
     multi_json (1.10.1)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -128,10 +138,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitters
+  bourbon
   middleman
   middleman-deploy
   middleman-livereload
   middleman-syntax
+  neat
   redcarpet
   ruby18_source_location
   wdm (~> 0.1.0)

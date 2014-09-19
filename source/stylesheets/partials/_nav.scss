@@ -1,0 +1,16 @@
+nav {
+  border-bottom: 1px solid $base-border-color;
+  margin: em(30) 0;
+
+  ul {
+    display: inline-block;
+    margin-bottom: em(10);
+  }
+}
+
+.blog-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  letterspacing: 4px;
+  text-transform: uppercase;
+}

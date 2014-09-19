@@ -4,47 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= data.page.title || "The Iron Yard - Houston Q3 Rails Engineering" %></title>
+    <title><%= data.page.title || "The Iron Yard - Houston Q4 Rails Engineering" %></title>
 
-    <%= stylesheet_link_tag "app", "style" %>
+    <%= stylesheet_link_tag "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700'
+      rel='stylesheet' type='text/css'>
     <%= javascript_include_tag "modernizr" %>
   </head>
 
   <body class="<%= page_classes %>">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">TIY Houston Q4 Rails Engineering</a></h1>
-        </li>
-      </ul>
 
-      <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-          <% data.menu.each do |title, link_or_dropdown| %>
-          <% if link_or_dropdown.respond_to?(:each) %>
-          <li class="has-dropdown">
-            <a href="#"><%= title %></a>
-            <ul class="dropdown">
-              <% link_or_dropdown.each do |title, link| %>
-              <li<%= " class='current'" if current_page.url == link %>>
-              <a href="<%= link %>"><%= title %></a>
-              </li>
-              <% end %>
-            </ul>
-          </li>
-          <% else %>
-          <li<%= " class='current'" if current_page.url == link_or_dropdown %>>
-            <a href="<%= link_or_dropdown %>"><%= title %></a>
-          </li>
-          <% end %>
-          <% end %>
-        </ul>
-      </section>
-    </nav>
 
-    <div id="main">
+    <div id="main" role="main">
+      <%= partial "partials/nav" %>
       <%= yield %>
+      <%= partial "partials/footer" %>
     </div>
 
     <%= javascript_include_tag  "all" %>
